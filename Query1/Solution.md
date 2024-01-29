@@ -1,3 +1,19 @@
+1. Fetch the following columns for completed order items for sales orders of SM_STORE product store and that are physical items.<br>
+	i.    ORDER_ID<br>
+	ii.   ORDER_ITEM_SEQ_ID<br>
+ 	iii.  PRODUCT_ID<br>
+	iv.   PRODUCT_TYPE_ID<br>
+	v.    IS_PHYSICAL<br>
+ 	vi.   IS_DIGITAL<br>
+	vii.  SALES_CHANNEL_ENUM_ID<br>
+	viii. ORDER_DATE<br>
+	ix.   ENTRY_DATE<br>
+	x.    STATUS_ID<br>
+	xi.   STATUS_DATETIME<br>
+	xii.  ORDER_TYPE_ID<br>
+	xiii. PRODUCT_STORE_ID <br>
+
+
 Query:
 ```sql
 select 
