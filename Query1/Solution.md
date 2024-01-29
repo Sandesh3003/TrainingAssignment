@@ -1,5 +1,5 @@
+Query:
 ```sql
-
 select 
 	oh.ORDER_ID,
 	oi.ORDER_ITEM_SEQ_ID,
@@ -25,8 +25,11 @@ join product_type pt
 on p.PRODUCT_TYPE_ID = pt.PRODUCT_TYPE_ID
 where oh.ORDER_TYPE_ID = "SALES_ORDER" and 
 oh.PRODUCT_STORE_ID = "SM_STORE" and pt.IS_PHYSICAL = "Y" and os.STATUS_ID ="ITEM_COMPLETED";
+```
+Output:
+![image](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/3b0b4300-1d52-482a-8351-151d13baebf3)
 
-![image](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/87820079-2b0e-45c0-8802-2084ee1d091e)
 
 Query Execution Plan:
-![q1](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/8b4ce2a8-a574-4f0b-a527-4b42c3316d2c)
+![q1](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/aacb95d5-77ac-4d10-b6bb-517ebf2d543b)
+
