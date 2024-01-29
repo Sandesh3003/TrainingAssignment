@@ -1,3 +1,5 @@
+6. Fetch all the physical items completed from Warehouse in September of 2023.
+
 Query:
 
 ```sql
