@@ -1,5 +1,6 @@
-Query:
+3. Fetch the order id and contact mech id for the shipping address of the orders completed in October of 2023.
 
+Query:
 ```sql
 select 
 	oh.ORDER_ID, 
