@@ -1,3 +1,5 @@
+7. Fetch all the physical items ordered in the month of September 2023.
+
 Query:
 
 ```sql
