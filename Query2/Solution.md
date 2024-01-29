@@ -1,13 +1,13 @@
 2. Fetch the following columns for completed return items of SM_STORE for ecom return channel.<br>
-	-RETURN_ID <br>
-	-ORDER_ID<br>
-	-PRODUCT_STORE_ID<br> 
-	-STATUS_DATETIME<br>
-	-ORDER_NAME <br>
-	-FROM_PARTY_ID <br>
-	-RETURN_DATE <br>
-	-ENTRY_DATE<br>
-	-RETURN_CHANNEL_ENUM_ID<br>
+	- RETURN_ID <br>
+	- ORDER_ID<br>
+	- PRODUCT_STORE_ID<br> 
+	- STATUS_DATETIME<br>
+	- ORDER_NAME <br>
+	- FROM_PARTY_ID <br>
+	- RETURN_DATE <br>
+	- ENTRY_DATE<br>
+	- RETURN_CHANNEL_ENUM_ID<br>
 
 Query :
 ```sql
