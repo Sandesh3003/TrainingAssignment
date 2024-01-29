@@ -1,3 +1,5 @@
+8. Find all the orders whose two or more items are completed but the orders are still in the approved status.
+
 Query:
 
 ```sql
