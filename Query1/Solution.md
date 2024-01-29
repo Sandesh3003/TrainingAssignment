@@ -27,3 +27,6 @@ where oh.ORDER_TYPE_ID = "SALES_ORDER" and
 oh.PRODUCT_STORE_ID = "SM_STORE" and pt.IS_PHYSICAL = "Y" and os.STATUS_ID ="ITEM_COMPLETED";
 
 ![image](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/87820079-2b0e-45c0-8802-2084ee1d091e)
+
+Query Execution Plan:
+![q1](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/8b4ce2a8-a574-4f0b-a527-4b42c3316d2c)
