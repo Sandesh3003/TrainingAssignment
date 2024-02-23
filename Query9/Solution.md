@@ -4,13 +4,12 @@ Query:
 
 ```sql
 select 
-	oh.ORDER_ID from order_item oi 
-join order_status os 
-on oi.ORDER_ID = os.ORDER_ID and oi.ORDER_ITEM_SEQ_ID = os.ORDER_ITEM_SEQ_ID and os.STATUS_ID="ITEM_CANCELLED"
-join order_header oh
-on oi.ORDER_ID = oh.ORDER_ID and oh.STATUS_ID = "ORDER_APPROVED"
-group by oh.ORDER_ID 
-having count(os.ORDER_ID)>=2;
+	oh.ORDER_ID 
+from order_header oh 
+join order_item oi
+on oi.ORDER_ID = oh.ORDER_ID and oh.STATUS_ID = "ORDER_APPROVED" and oi.STATUS_ID="ITEM_CANCELLED"
+group by oh.ORDER_ID
+having count(oh.ORDER_ID)>=2;
 ```
 
 Output:
@@ -19,4 +18,4 @@ Output:
 
 Query Execution Plan:
 
-![image](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/0d6447a3-a43b-458c-bd18-c16c0eaab3b2)
+![image](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/c5401d52-d790-444b-b255-3f70d5a25850)
