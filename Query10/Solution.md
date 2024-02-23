@@ -1,4 +1,4 @@
-10. Fetch all the order items that are in the created status and the order type should be a sales order
+10. Fetch all the order items that are in the created status and the order type should be a sales order<br>
 a. ORDER_ID<br>
 b. PRODUCT_TYPE_ID<br>
 c. ORDER_LINE_ID<br>
@@ -44,19 +44,21 @@ join order_item oi
 on oh.ORDER_ID = oi.ORDER_ID and oh.ORDER_TYPE_ID = "SALES_ORDER"
 join product p 
 on p.PRODUCT_ID = oi.PRODUCT_ID 
-join order_contact_mech ocm 
-on oh.ORDER_ID = ocm.ORDER_ID and (CONTACT_MECH_PURPOSE_TYPE_ID="BILLING_LOCATION" or ocm.CONTACT_MECH_PURPOSE_TYPE_ID="SHIPPING_LOCATION")
+join order_contact_mech ocm1
+on oh.ORDER_ID = ocm1.ORDER_ID and ocm1.CONTACT_MECH_PURPOSE_TYPE_ID="BILLING_LOCATION"
+join order_contact_mech ocm2
+on oh.ORDER_ID = ocm2.ORDER_ID and ocm2.CONTACT_MECH_PURPOSE_TYPE_ID="SHIPPING_LOCATION"
 left join postal_address pa 
-on pa.CONTACT_MECH_ID = ocm.CONTACT_MECH_ID and ocm.CONTACT_MECH_PURPOSE_TYPE_ID = "BILLING_LOCATION"
+on pa.CONTACT_MECH_ID = ocm1.CONTACT_MECH_ID 
 left join postal_address pa2 
-on pa2.CONTACT_MECH_ID = ocm.CONTACT_MECH_ID and ocm.CONTACT_MECH_PURPOSE_TYPE_ID = "SHIPPING_LOCATION"
+on pa2.CONTACT_MECH_ID = ocm2.CONTACT_MECH_ID 
 where oi.STATUS_ID = "ITEM_CREATED";
 ```
 
 Output:
 
-![image](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/99d0f48e-e92a-4469-b995-f7b93d2891c7)
+![image](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/7c7bfa51-09b8-44f7-bc3c-b9c6b8775d39)
 
 Query Execution Plan:
 
-![q10](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/92b88e62-6910-4333-a436-60c374653121)
+![image](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/a34dac8e-ce4b-4c8f-a14f-4b99308afedf)
