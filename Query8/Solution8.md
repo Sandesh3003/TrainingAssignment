@@ -2,23 +2,23 @@
 
 Query:
 ```sql
-SELECT COUNT(*)
-FROM return_item ri
-JOIN (
-   SELECT ri2.ORDER_ID
-   FROM return_item ri2
-   GROUP BY ri2.ORDER_ID
-   HAVING COUNT(ri2.ORDER_ID) = 1
-) AS unique_orders ON unique_orders.ORDER_ID = ri.ORDER_ID
-JOIN return_header rh ON rh.RETURN_ID = ri.RETURN_ID AND rh.ENTRY_DATE > DATE_SUB(CURDATE(), INTERVAL 1 MONTH);
+SELECT COUNT(*) AS total_single_return_items
+FROM (
+    SELECT ri.ORDER_ID
+    FROM return_item ri
+    JOIN return_header rh ON rh.RETURN_ID = ri.RETURN_ID
+    WHERE rh.ENTRY_DATE > DATE_SUB(CURDATE(), INTERVAL 1 MONTH)
+    GROUP BY ri.ORDER_ID
+    HAVING COUNT(ri.ORDER_ID) = 1
+) AS single_return_items;
 ```
 Output:
 
-![image](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/c8410bda-231b-4397-9a7d-fa04ac23be3e)
+![image](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/fa72c8fe-dbd8-432e-8697-ac95db65c331)
 
 Query Execution Plan:
 
-![Q3 8](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/45e9feef-833d-4d11-a2d8-372cc2be602c)
+![image](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/e6c57233-8712-4c21-aecf-e12c570c0be9)
 
 
 
