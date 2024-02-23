@@ -4,7 +4,7 @@ Query:
 ```sql
 select count(distinct os.ORDER_ID) Order_Count from order_shipment os 
 join shipment s 
-on os.SHIPMENT_ID = s.SHIPMENT_ID 
+on os.SHIPMENT_ID = s.SHIPMENT_ID and os.ORDER_ID=s.PRIMARY_ORDER_ID and s.PRIMARY_SHIP_GROUP_SEQ_ID=os.SHIP_GROUP_SEQ_ID
 join facility f 
 on s.ORIGIN_FACILITY_ID = f.FACILITY_ID 
 join facility_type ft 
@@ -20,4 +20,4 @@ Output:
 
 Query Execution Plan:
 
-![image](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/ad2fb973-bcfc-4f5d-8b0f-9f8b566ee2b1)
+![image](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/06b93947-1cda-455e-aa63-fa38266fc03d)
