@@ -21,7 +21,7 @@ on oh.ORDER_ID = opp.ORDER_ID and oh.ORDER_TYPE_ID="SALES_ORDER" and oh.STATUS_I
 join payment_method_type pmt
 on opp.PAYMENT_METHOD_TYPE_ID = pmt.PAYMENT_METHOD_TYPE_ID 
 left join order_identification oi
-on oh.ORDER_ID = oi.ORDER_ID and oi.ORDER_IDENTIFICATION_TYPE_ID = "SHOPIFY_ORD_NAME";
+on oh.ORDER_ID = oi.ORDER_ID and oi.ORDER_IDENTIFICATION_TYPE_ID = "SHOPIFY_ORD_NAME" and (oi.THRU_DATE=null or oi.THRU_DATE>curdate());
 
 ```
 Output:
