@@ -13,8 +13,8 @@ order by ORDERS_SHIPPED desc LIMIT 1;
 ```
 Output:
 
-![image](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/75004055-5d3b-4d1d-809c-8d4524d695db)
+![image](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/adf21427-ba18-4eb4-ba45-eb6fffa136d6)
 
 Query Execution Plan:
 
-![image](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/05514b19-7701-4318-8e50-2009556bde64)
+![SQL3q6](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/69ee01f7-bae7-4203-beda-816d1a1cd243)
