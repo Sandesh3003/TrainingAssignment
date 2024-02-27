@@ -2,18 +2,14 @@
 
 Query:
 ```sql
-select oh.PRODUCT_STORE_ID, count(oh.ORDER_ID) as ORDERS_SHIPPED from order_header oh 
-join product_store_shipment_meth pssm
-on oh.PRODUCT_STORE_ID = pssm.PRODUCT_STORE_ID
-join shipment_method_type smt
-on smt.SHIPMENT_METHOD_TYPE_ID =pssm.SHIPMENT_METHOD_TYPE_ID and (smt.PARENT_TYPE_ID = 'NEXT_DAY' or smt.SHIPMENT_METHOD_TYPE_ID = 'SAME_DAY')
-join order_shipment os
-on os.ORDER_ID = oh.ORDER_ID
+select oh.PRODUCT_STORE_ID, count(distinct oh.ORDER_ID) as ORDERS_SHIPPED from order_header oh 
+join shipment s
+on s.PRIMARY_ORDER_ID = oh.ORDER_ID and s.SHIPMENT_METHOD_TYPE_ID="NEXT_DAY"
 join shipment_status ss
-on ss.SHIPMENT_ID = os.SHIPMENT_ID and ss.STATUS_ID = "SHIPMENT_SHIPPED"
+on ss.SHIPMENT_ID = s.SHIPMENT_ID and s.STATUS_ID = "SHIPMENT_SHIPPED"
 where ss.STATUS_DATE > date_sub(curdate(), interval 1 month)
 group by oh.PRODUCT_STORE_ID
-order by ORDERS_SHIPPED desc limit 1;
+order by ORDERS_SHIPPED desc LIMIT 1;
 ```
 Output:
 
