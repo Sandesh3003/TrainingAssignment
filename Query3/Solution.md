@@ -11,7 +11,7 @@ join order_contact_mech ocm
 on oh.ORDER_ID = ocm.ORDER_ID and ocm.CONTACT_MECH_PURPOSE_TYPE_ID = "SHIPPING_LOCATION" 
 join order_status os 
 on oh.ORDER_ID = os.ORDER_ID and os.STATUS_ID = "ORDER_COMPLETED"
-where  os.STATUS_DATETIME >="2023-10-01 00:00:00.000" and os.STATUS_DATETIME <= "2023-10-31 23:59:59.999";
+where  os.STATUS_DATETIME >="2023-10-01 00:00:00.000" and os.STATUS_DATETIME < "2023-11-01 00:00:00.000";
 ```
 Output:
 
@@ -19,6 +19,6 @@ Output:
 
 Query Execution Plan:
 
-![image](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/dc38b877-2153-4c30-b95f-03377a50ad61)
+![image](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/c5cde4eb-dc1d-4d6b-95d0-6a4dae88406d)
 
 
