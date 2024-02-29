@@ -19,7 +19,7 @@ Query:
 select 
 	oh.ORDER_ID,
 	oi.ORDER_ITEM_SEQ_ID,
-	p.PRODUCT_ID,
+	oi.PRODUCT_ID,
 	p.PRODUCT_TYPE_ID,
 	pt.IS_PHYSICAL,
 	pt.IS_DIGITAL,
@@ -32,20 +32,19 @@ select
 	oh.PRODUCT_STORE_ID 
 from order_header oh
 join order_item oi
-on oh.ORDER_ID = oi.ORDER_ID
+on oh.ORDER_ID = oi.ORDER_ID and oh.ORDER_TYPE_ID = "SALES_ORDER" and oh.PRODUCT_STORE_ID = "SM_STORE"
 join order_status os
-on oi.ORDER_ID = os.ORDER_ID and oi.ORDER_ITEM_SEQ_ID = os.ORDER_ITEM_SEQ_ID
+on oi.ORDER_ID = os.ORDER_ID and oi.ORDER_ITEM_SEQ_ID = os.ORDER_ITEM_SEQ_ID and os.STATUS_ID ="ITEM_COMPLETED"
 join product p
 on oi.PRODUCT_ID = p.PRODUCT_ID
 join product_type pt 
-on p.PRODUCT_TYPE_ID = pt.PRODUCT_TYPE_ID
-where oh.ORDER_TYPE_ID = "SALES_ORDER" and 
-oh.PRODUCT_STORE_ID = "SM_STORE" and pt.IS_PHYSICAL = "Y" and os.STATUS_ID ="ITEM_COMPLETED";
+on p.PRODUCT_TYPE_ID = pt.PRODUCT_TYPE_ID and pt.IS_PHYSICAL = "Y";
 ```
 Output:
-![image](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/3b0b4300-1d52-482a-8351-151d13baebf3)
+![image](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/552b2664-0319-4b98-86e5-a807bcd50ffb)
+
 
 
 Query Execution Plan:
-![q1](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/aacb95d5-77ac-4d10-b6bb-517ebf2d543b)
+![image](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/0b7b7418-9ee0-4477-b6b3-aa006f479311)
 
