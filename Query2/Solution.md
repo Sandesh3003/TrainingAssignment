@@ -32,7 +32,9 @@ select
 	where rh.RETURN_CHANNEL_ENUM_ID = 'ECOM_RTN_CHANNEL' and rs.STATUS_ID ="RETURN_COMPLETED";
 ```
 Output:
-![image](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/02f6f015-23ad-42ee-b7dc-7bf49061b771)
+
+![image](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/71789474-3d2d-4388-b681-a508a3d58470)
 
 Query Execution Plan:
-![image](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/e9b19464-7ed6-4af2-acab-8a2566c8a2d7)
+
+![image](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/262870ae-d53b-4500-96e9-77eda31b333b)
