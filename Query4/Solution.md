@@ -17,7 +17,7 @@ select
 	oi.ID_VALUE SHOPIFY_ORDER_NAME
 from order_header oh
 join order_payment_preference opp 
-on oh.ORDER_ID = opp.ORDER_ID and oh.ORDER_TYPE_ID="SALES_ORDER" and oh.STATUS_ID="ORDER_CREATED"
+on oh.ORDER_ID = opp.ORDER_ID and oh.ORDER_TYPE_ID="SALES_ORDER"
 join payment_method_type pmt
 on opp.PAYMENT_METHOD_TYPE_ID = pmt.PAYMENT_METHOD_TYPE_ID 
 left join order_identification oi
@@ -26,8 +26,10 @@ on oh.ORDER_ID = oi.ORDER_ID and oi.ORDER_IDENTIFICATION_TYPE_ID = "SHOPIFY_ORD_
 ```
 Output:
 
-![image](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/9882450a-958a-4537-a945-f60d11a9ff12)
+![image](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/f83a0846-8c4e-44a9-bd4e-889e8b03485e)
+
 
 Query Execution Plan:
-![image](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/aa27d8ce-efe6-4c3d-8dea-c9ff8e70dc3e)
+
+![image](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/f65f0b17-0b8c-4aca-baae-c2a1f9375447)
 
