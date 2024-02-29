@@ -42,7 +42,7 @@ join facility f
 on oisg.FACILITY_ID = f.FACILITY_ID
 join order_status os 
 on oh.ORDER_ID = os.ORDER_ID and os.STATUS_ID = "ORDER_COMPLETED"
-where  os.STATUS_DATETIME  >="2023-08-01 00:00:00.000" and os.STATUS_DATETIME <= "2023-08-31 23:59:59.999";
+where  os.STATUS_DATETIME  >="2023-08-01 00:00:00.000" and os.STATUS_DATETIME < "2023-09-01 00:00:00.000";
 ```
 
 Output:
@@ -51,4 +51,5 @@ Output:
 
 Query Execution Plan:
 
-![q13](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/992a615c-2ca8-4720-8a39-d5c46ec09d28)
+![SQL2q13](https://github.com/Sandesh3003/TrainingAssignment/assets/77960808/0538e4fa-e709-4989-9d6d-2f44e5a97121)
+
